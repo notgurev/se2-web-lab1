@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Первая лаба</title>
-    <link rel="icon" type="image/png" href="resources/lebedev.png">
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link href="resources/lebedev.png" rel="icon" type="image/png">
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
     <script src="main.js"></script>
 </head>
 <body>
@@ -25,35 +25,48 @@
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="-4"> -4
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="-3"> -3
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="-2"> -2
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="-1"> -1
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="0"> 0
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="1"> 1
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="2"> 2
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="3"> 3
-                        <input type="checkbox" onclick="changeX(this)" name="x_checkbox" value="4"> 4
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="-4"> -4
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="-3"> -3
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="-2"> -2
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="-1"> -1
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="0"> 0
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="1"> 1
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="2"> 2
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="3"> 3
+                        <input name="x_checkbox" onclick="changeX(this)" type="checkbox" value="4"> 4
                     </div>
                 </div>
                 <div id="y_input_block">
                     <label for="Y">Y:</label>
-                    <input id="Y" onfocusout="checkY(this)" type="text" value="" placeholder="(-5 ... 3)">
+                    <input id="Y" onfocusout="checkY(this)" placeholder="(-5 ... 3)" type="text" value="">
                 </div>
                 <div id="r_input_block">
                     <div class="button_block">
                         <label>R: </label>
-                        <button id="r_1.0" type="button" onclick="changeR(this)">1</button>
-                        <button id="r_1.5" type="button" onclick="changeR(this)">1.5</button>
-                        <button id="r_2.0" type="button" onclick="changeR(this)">2</button>
-                        <button id="r_2.5" type="button" onclick="changeR(this)">2.5</button>
-                        <button id="r_3.0" type="button" onclick="changeR(this)">3</button>
+                        <button id="r_1.0" onclick="changeR(this)" type="button">1</button>
+                        <button id="r_1.5" onclick="changeR(this)" type="button">1.5</button>
+                        <button id="r_2.0" onclick="changeR(this)" type="button">2</button>
+                        <button id="r_2.5" onclick="changeR(this)" type="button">2.5</button>
+                        <button id="r_3.0" onclick="changeR(this)" type="button">3</button>
                     </div>
                 </div>
-                <button type="submit" class="special_button">Отправить</button>
+                <button class="special_button" type="submit">Отправить</button>
             </form>
         </div>
-        <div class="content_block" id="results">ТУТ РЕЗУЛЬТАТЫ</div>
+        <div class="content_block" id="results">
+            <table id="results_table">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Время запуска</th>
+                    <th>Время работы</th>
+                    <th>Результат</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 

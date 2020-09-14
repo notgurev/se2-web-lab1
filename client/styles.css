@@ -88,8 +88,11 @@ body {
     display: inline-block;
     align-items: center;
     margin-inside: 10px;
-    margin: 50px; /* расстояние между блоками */
-    /*box-shadow: 0 0 10px var(--edges-background-color);*/
+    margin: 40px; /* расстояние между блоками */
+}
+
+.content_block#results {
+    min-width: 500px;
 }
 
 footer {
@@ -107,7 +110,7 @@ footer {
 }
 
 /*
-    Селектор идентификаторов
+    Селектор идентификаторов (один из многих)
  */
 #footer_text {
     text-align: center;
@@ -147,7 +150,7 @@ footer {
 }
 
 .input_form {
-    font-family: "Montserrat","Open Sans", sans-serif;
+    font-family: "Montserrat", "Open Sans", sans-serif;
     font-size: 15pt;
     line-height: 50px;
     padding-left: 15px;
@@ -168,14 +171,37 @@ button {
     background-color: var(--special-button-color);
 }
 
-input[type=checkbox] {
-    transform: scale(1.5);
-}
-
-input[type=text] {
+input[type=checkbox], input[type=text] {
     transform: scale(1.5);
 }
 
 label[for="Y"] {
     padding-right: 50px;
+}
+
+.content_block#results {
+    padding-top: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+table {
+    padding: 20px;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+th, td {
+    border: transparent;
+    padding: 10px 15px;
+}
+
+th {
+    background-color: var(--edges-background-color);
+}
+
+td {
+    color: var(--edges-background-color);
+    word-break: break-word;
 }
