@@ -1,20 +1,22 @@
 let
-    Y = document.getElementById('y-text'),
-    R = document.getElementById("r-buttons"),
-    X = document.getElementsByName("x-checkboxes"),
     selectedButton,
-    selectedCheckbox;
+    selectedCheckbox,
+    submitButton;
 
 function checkY(yInputElement) {
     let y = yInputElement.value.trim().replace(",", ".")
     if (y === "") {
         yInputElement.setCustomValidity("Введите значение");
         return false;
-    } else if (!isFinite(y)) {
+    } else if (!isFinite(+y)) {
         yInputElement.setCustomValidity("Значение должно быть числом");
         return false;
-    } else if (y <= -5 || y > 3) {
+    } else if (+y <= -5 || +y > 3) {
         yInputElement.setCustomValidity("Число должно входить в диапазон (-5 ... 3)")
+        return false;
+    } else {
+        updateSubmitButton(true);
+        return true;
     }
 }
 
@@ -27,6 +29,7 @@ function changeX(element) {
     } else {
         selectedCheckbox = undefined;
     }
+    updateSubmitButton();
 }
 
 function changeR(element) {
@@ -35,6 +38,19 @@ function changeR(element) {
     }
     selectedButton = element;
     element.classList.add("selected_button");
+    updateSubmitButton();
+}
+
+function updateSubmitButton(yIsCheckedAndCorrect = false) {
+    if (submitButton === undefined) {
+        submitButton = document.getElementById("submit_button");
+    } else {
+        // check x, y, z
+        submitButton.disabled = !(selectedButton !== undefined
+            && selectedCheckbox !== undefined
+            && (yIsCheckedAndCorrect || checkY(document.getElementById('Y')))
+        );
+    }
 }
 
 function submit(e) {

@@ -149,6 +149,12 @@ footer {
     background-color: var(--special-button-color-active);
 }
 
+.special_button:disabled {
+    background-color: var(--edges-background-color);
+    color: var(--main-background-color);
+    box-shadow: none;
+}
+
 .input_form {
     font-family: "Montserrat", "Open Sans", sans-serif;
     font-size: 15pt;

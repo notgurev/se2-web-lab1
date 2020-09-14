@@ -38,7 +38,8 @@
                 </div>
                 <div id="y_input_block">
                     <label for="Y">Y:</label>
-                    <input id="Y" onfocusout="checkY(this)" placeholder="(-5 ... 3)" type="text" value="">
+                    <input id="Y" placeholder="(-5 ... 3)" oninput='setCustomValidity(""); checkY(this)'
+                           type="text" value="" onfocusout="this.reportValidity()" maxlength="15">
                 </div>
                 <div id="r_input_block">
                     <div class="button_block">
@@ -50,7 +51,7 @@
                         <button id="r_3.0" onclick="changeR(this)" type="button">3</button>
                     </div>
                 </div>
-                <button class="special_button" type="submit">Отправить</button>
+                <button class="special_button" type="submit" id="submit_button" disabled>Отправить</button>
             </form>
         </div>
         <div class="content_block" id="results">
