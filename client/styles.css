@@ -58,13 +58,28 @@ body {
     text-align: center;
     font-family: Arial, serif;
     font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* Расположение основного контента */
+#content_blocks {
+    justify-content: center;
+    margin-outside: 100px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Блоки основного контента */
-#content_blocks {
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
+#content_blocks .content_block {
+    background-color: var(--blocks-background-color);
+    max-width: 700px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 300px;
+    border-radius: 5%;
+    margin: 50px; /* расстояние между блоками */
+    /*box-shadow: 0 0 10px var(--edges-background-color);*/
 }
 
 footer {
