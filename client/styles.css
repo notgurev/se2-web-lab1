@@ -1,11 +1,11 @@
 /*
-    Наследование и каскадирование.
+    каскадирование.
  */
 
 /*
-    Селектор псевдоэлементов
+    Селектор псевдоэлементов + наследование
  */
-::selection {
+html ::selection {
     background-color: var(--button-color);
     color: var(--main-font-color);
 }
@@ -45,21 +45,26 @@ body {
 
 .content {
     color: var(--main-font-color);
+    font-family: Arial, serif;
     width: 100%;
 }
 
 /*
     Селектор дочерних элементов
     Выделяет только h1 в .content
-    h1 есть в блоках, но его не выделяет.
+    h1 есть в блоках, но его не выделяет. TODO
 */
 .content > h1 {
     text-align: center;
+    font-family: Arial, serif;
+    font-size: 30px;
 }
 
 /* Блоки основного контента */
-.content div {
-
+#content_blocks {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -81,4 +86,18 @@ footer {
  */
 #footer_text {
     text-align: center;
+}
+
+#graph-picture {
+    background: url("resources/areas-light.png");
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+}
+
+#graph-picture:hover {
+    background: url("resources/spinning-lebedev.gif");
+    height: 300px;
+    width: 300px;
+    background-size: cover;
 }
