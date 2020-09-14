@@ -7,6 +7,7 @@
  */
 ::selection {
     background-color: var(--button-color);
+    color: var(--main-font-color);
 }
 
 :root {
@@ -16,6 +17,7 @@
     --main-background-color: #2f3136;
     --blocks-background-color: #36393f;
     --button-color: #43b581;
+    --warning-color: #ea4646;
 }
 
 #header_text {
@@ -38,6 +40,7 @@ body {
     background-color: var(--main-background-color);
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
 .content {
