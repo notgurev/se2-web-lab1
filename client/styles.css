@@ -1,8 +1,13 @@
 /*
-При работе с CSS должно быть продемонстрировано использование селекторов
-псевдоэлементов, селекторов элементов, а также такие свойства стилей CSS,
-как наследование и каскадирование.
+    Наследование и каскадирование.
  */
+
+/*
+    Селектор псевдоэлементов
+ */
+::selection {
+    background-color: var(--button-color);
+}
 
 :root {
     --main-font-color: #ffffff;
@@ -13,20 +18,30 @@
     --button-color: #43b581;
 }
 
-header {
-    background-color: var(--edges-background-color);
+#header_text {
     font-family: monospace;
     font-size: 30px;
     color: var(--main-font-color);
     padding-left: 40px;
+}
+
+header {
+    background-color: var(--edges-background-color);
     height: 100px;
-    line-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+}
+
+body {
+    background-color: var(--main-background-color);
+    height: 100%;
     width: 100%;
 }
 
 .content {
     color: var(--main-font-color);
-    background-color: var(--main-background-color);
     width: 100%;
 }
 
@@ -36,7 +51,7 @@ header {
     h1 есть в блоках, но его не выделяет.
 */
 .content > h1 {
-
+    text-align: center;
 }
 
 /* Блоки основного контента */
