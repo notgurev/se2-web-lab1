@@ -6,7 +6,7 @@
     Селектор псевдоэлементов + наследование
  */
 html ::selection {
-    background-color: var(--button-color);
+    background-color: var(--special-button-color);
     color: var(--main-font-color);
 }
 
@@ -16,8 +16,10 @@ html ::selection {
     --edges-background-color: #202225;
     --main-background-color: #2f3136;
     --blocks-background-color: #36393f;
-    --button-color: #43b581;
-    --warning-color: #ea4646;
+    --special-button-color: #43b581;
+    --special-button-color-hover: #107c4c;
+    --special-button-color-active: #014a28;
+    --warning-color: #4bea46;
 }
 
 #header_text {
@@ -52,7 +54,7 @@ body {
 /*
     Селектор дочерних элементов
     Выделяет только h1 в .content
-    h1 есть в блоках, но его не выделяет. TODO
+    h1 есть в блоках, но его не выделяет.
 */
 .content > h1 {
     text-align: center;
@@ -60,6 +62,11 @@ body {
     font-size: 30px;
     margin-top: 50px;
     margin-bottom: 30px;
+}
+
+.content_block > h1 {
+    text-align: center;
+    font-size: 25px;
 }
 
 /* Расположение основного контента */
@@ -78,6 +85,9 @@ body {
     max-height: 300px;
     min-height: 300px;
     border-radius: 5%;
+    display: inline-block;
+    align-items: center;
+    margin-inside: 10px;
     margin: 50px; /* расстояние между блоками */
     /*box-shadow: 0 0 10px var(--edges-background-color);*/
 }
@@ -115,4 +125,23 @@ footer {
     height: 300px;
     width: 300px;
     background-size: cover;
+}
+
+.special_button {
+    background-color: var(--special-button-color);
+    width: 50%;
+    border: none;
+    border-radius: 5%;
+    text-decoration: none;
+    color: var(--main-font-color);
+    font-size: 20px;
+}
+
+.special_button:hover {
+    background-color: var(--special-button-color-hover);
+    box-shadow: 0 0 10px var(--edges-background-color);
+}
+
+.special_button:active {
+    background-color: var(--special-button-color-active);
 }
