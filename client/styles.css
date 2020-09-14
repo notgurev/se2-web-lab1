@@ -1,10 +1,66 @@
+/*
+При работе с CSS должно быть продемонстрировано использование селекторов
+псевдоэлементов, селекторов элементов, а также такие свойства стилей CSS,
+как наследование и каскадирование.
+ */
+
+:root {
+    --main-font-color: #ffffff;
+    --secondary-font-color: #747f8d;
+    --edges-background-color: #202225;
+    --main-background-color: #2f3136;
+    --blocks-background-color: #36393f;
+    --button-color: #43b581;
+}
+
 header {
-    background-color: darkgreen;
+    background-color: var(--edges-background-color);
     font-family: monospace;
     font-size: 30px;
-    color: whitesmoke;
+    color: var(--main-font-color);
     padding-left: 40px;
     height: 100px;
     line-height: 100px;
     width: 100%;
+}
+
+.content {
+    color: var(--main-font-color);
+    background-color: var(--main-background-color);
+    width: 100%;
+}
+
+/*
+    Селектор дочерних элементов
+    Выделяет только h1 в .content
+    h1 есть в блоках, но его не выделяет.
+*/
+.content > h1 {
+
+}
+
+/* Блоки основного контента */
+.content div {
+
+}
+
+footer {
+    background-color: var(--edges-background-color);
+    font-family: Tahoma, serif;
+    font-size: 18px;
+    color: var(--secondary-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 70px;
+}
+
+/*
+    Селектор идентификаторов
+ */
+#footer_text {
+    text-align: center;
 }
