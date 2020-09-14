@@ -145,3 +145,37 @@ footer {
 .special_button:active {
     background-color: var(--special-button-color-active);
 }
+
+.input_form {
+    font-family: "Montserrat","Open Sans", sans-serif;
+    font-size: 15pt;
+    line-height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+button {
+    background-color: var(--edges-background-color);
+    border: none;
+    border-radius: 5%;
+    font-size: 120%;
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+.selected_button {
+    background-color: var(--special-button-color);
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+input[type=text] {
+    transform: scale(1.5);
+}
+
+label[for="Y"] {
+    padding-right: 50px;
+}
