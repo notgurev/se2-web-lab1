@@ -19,7 +19,7 @@ html ::selection {
     --special-button-color: #43b581;
     --special-button-color-hover: #107c4c;
     --special-button-color-active: #014a28;
-    --warning-color: #4bea46;
+    --warning-color: #ff0000;
 }
 
 #header_text {

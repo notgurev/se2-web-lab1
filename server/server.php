@@ -10,7 +10,8 @@ date_default_timezone_set('Europe/Moscow');
 $current_time = date("H:i:s:ms");
 
 if (!check_values($x, $y, $r)) {
-    http_response_code(400); // code?
+//    http_response_code(412); // code?
+    echo('x=' . $x . 'y=' . $y . 'r=' . $r);
     return;
 }
 
