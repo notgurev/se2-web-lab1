@@ -44,16 +44,17 @@
                 <div id="r_input_block">
                     <div class="button_block">
                         <label>R: </label>
-                        <input name="r" onclick="changeR(this)" type="button" value="1">
-                        <input name="r" onclick="changeR(this)" type="button" value="1.5">
-                        <input name="r" onclick="changeR(this)" type="button" value="2">
-                        <input name="r" onclick="changeR(this)" type="button" value="2.5">
-                        <input name="r" onclick="changeR(this)" type="button" value="3">
+                        <button name="r" type="button" onclick="changeR(this)" value="1">1</button>
+                        <button name="r" type="button" onclick="changeR(this)" value="1.5">1.5</button>
+                        <button name="r" type="button" onclick="changeR(this)" value="2">2</button>
+                        <button name="r" type="button" onclick="changeR(this)" value="2.5">2.5</button>
+                        <button name="r" type="button" onclick="changeR(this)" value="3">3</button>
                     </div>
                 </div>
                 <button class="special_button" disabled id="submit_button" type="submit">
                     Отправить
                 </button>
+                <button class="special_button" id="clear_button" type="button">Очистить</button>
             </form>
         </div>
         <div class="content_block" id="results">

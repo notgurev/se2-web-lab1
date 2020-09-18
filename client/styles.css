@@ -78,7 +78,7 @@ body {
     background-color: var(--blocks-background-color);
     max-width: 700px;
     min-width: 300px;
-    max-height: 300px;
+    /*max-height: 300px;*/
     min-height: 300px;
     border-radius: 5%;
     display: inline-block;
@@ -160,7 +160,7 @@ footer {
     text-align: center;
 }
 
-input[type="button"] {
+button {
     background-color: var(--edges-background-color);
     border: none;
     border-radius: 5%;
@@ -169,7 +169,7 @@ input[type="button"] {
     color: var(--main-font-color);
 }
 
-input[type="button"].selected_button {
+button.selected_button {
     background-color: var(--special-button-color);
 }
 

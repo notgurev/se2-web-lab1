@@ -73,3 +73,15 @@ document.getElementById("values_selection").addEventListener("submit", e => {
     xhr.open("POST", "server/server.php");
     xhr.send(formData);
 })
+
+document.getElementById("clear_button").addEventListener("click", e => {
+    e.preventDefault();
+    let xhr = new XMLHttpRequest();
+    xhr.onloadend = () => {
+        if (xhr.status === 200) {
+            document.getElementById("results_table").innerHTML = xhr.response;
+        } else console.log("status: ", xhr.status)
+    };
+    xhr.open("POST", "server/clear.php");
+    xhr.send();
+})
