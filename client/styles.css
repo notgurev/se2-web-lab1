@@ -36,19 +36,26 @@ header {
     align-items: center;
     justify-content: left;
     width: 100%;
+    flex-shrink: 0;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     background-color: var(--main-background-color);
-    height: 100%;
     width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
     color: var(--main-font-color);
     font-family: Arial, serif;
     width: 100%;
+    flex: 1 0 auto;
 }
 
 /* Селектор дочерних элементов */
@@ -78,12 +85,10 @@ body {
     background-color: var(--blocks-background-color);
     max-width: 700px;
     min-width: 300px;
-    /*max-height: 300px;*/
     min-height: 300px;
     border-radius: 5%;
     display: inline-block;
     align-items: center;
-    margin-inside: 10px;
     margin: 40px; /* расстояние между блоками */
 }
 
@@ -96,13 +101,13 @@ footer {
     font-family: Tahoma, serif;
     font-size: 18px;
     color: var(--secondary-font-color);
+    width: 100%;
+    flex-shrink: 0;
+    height: 70px;
+    /* Text */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 70px;
 }
 
 /*
@@ -187,13 +192,14 @@ label[for="Y"] {
 
 .content_block#results {
     padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     align-items: start;
     justify-content: center;
 }
 
 table {
-    padding: 20px;
+    /*padding: 20px;*/
     border-collapse: collapse;
     border-style: hidden;
 }
