@@ -85,3 +85,14 @@ document.getElementById("clear_button").addEventListener("click", e => {
     xhr.open("POST", "server/clear.php");
     xhr.send();
 })
+
+window.onload = function () {
+    let xhr = new XMLHttpRequest();
+    xhr.onloadend = () => {
+        if (xhr.status === 200) {
+            document.getElementById("results_table").innerHTML = xhr.response;
+        } else console.log("status: ", xhr.status)
+    };
+    xhr.open("GET", "server/onload.php");
+    xhr.send();
+}
