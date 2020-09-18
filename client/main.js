@@ -53,19 +53,23 @@ function updateSubmitButton(yIsCheckedAndCorrect = false) {
     }
 }
 
-function submit(e) {
-    e.preventDefault();
-    let formData = new FormData();
-    formData.append("x", selectedCheckbox.value);
-    formData.append("y", document.getElementById("y").value.replace(',', '.'));
-    formData.append("r", selectedButton.value);
-    alert(`x = ${selectedCheckbox.value}, y = ${document.getElementById("y").value.replace(',', '.')}, z = ${selectedButton.value}`);
-    // let xhr = new XMLHttpRequest();
-    // xhr.onloadend = function () {
-    //     if (xhr.status === 200) {
-    //         document.querySelector("#results_table").innerHTML = xhr.response;
-    //     } else console.log("status: ", xhr.status)
-    // };
-    // xhr.open("POST", "server/server.php");
-    // xhr.send(formData);
-}
+// form
+document.getElementById("values_selection").addEventListener("submit", e => {
+    e.preventDefault(); // prevent submitting
+    let formData = new FormData(),
+        xValue = selectedCheckbox.value,
+        yValue = document.getElementById("Y").value.replace(',', '.'),
+        rValue = selectedButton.value;
+    formData.append("x", xValue);
+    formData.append("y", yValue);
+    formData.append("r", rValue);
+    console.log(`x = ${xValue}, y = ${yValue}, z = ${rValue}`);
+    let xhr = new XMLHttpRequest();
+    xhr.onloadend = () => {
+        if (xhr.status === 200) {
+            document.getElementById("results_table").innerHTML = xhr.response;
+        } else console.log("status: ", xhr.status)
+    };
+    xhr.open("POST", "server/server.php");
+    xhr.send(formData);
+})

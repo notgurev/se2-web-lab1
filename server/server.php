@@ -10,16 +10,16 @@ date_default_timezone_set('Europe/Moscow');
 $current_time = date("H:i:s:ms");
 
 if (!check_values($x, $y, $r)) {
-//    http_response_code(412); // code?
-    echo('x=' . $x . 'y=' . $y . 'r=' . $r);
+    http_response_code(412);
+    echo("x={$x}, y={$y}, r={$r}");
     return;
 }
 
-$result = check_area($x, $y, $r) ? "Попадание" : "Мимо"; // цвет?
+$result = check_area($x, $y, $r) ? "<span class='successful'>Попадание</span>" : "<span class='missed'>Мимо</span>";
 
 $exec_time = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
 
-array_push($_SESSION['results'], [$x, $y, $r, $current_time, $exec_time, $result]);
+$_SESSION['results'][] = [$x, $y, $r, $current_time, $exec_time, $result];
 
 function check_area($x, $y, $r)
 {
@@ -37,3 +37,27 @@ function check_values($x, $y, $r)
         and (is_numeric($y) and $y > -5 and $y < 3) // is numeric check necessary?
         and in_array($r, [1, 1.5, 2, 2.5, 3]);
 }
+
+?>
+    <thead>
+    <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Время запуска</th>
+        <th>Время работы</th>
+        <th>Результат</th>
+    </tr>
+    </thead>
+<?php foreach ($_SESSION["results"] as $res) {
+    echo <<<HTML
+    <tr>
+        <td>$res[0]</td>
+        <td>$res[1]</td>
+        <td>$res[2]</td>
+        <td>$res[3]</td>
+        <td>$res[4]</td>
+        <td>$res[5]</td>
+    </tr>
+HTML;
+} ?>

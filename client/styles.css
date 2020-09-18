@@ -51,11 +51,7 @@ body {
     width: 100%;
 }
 
-/*
-    Селектор дочерних элементов
-    Выделяет только h1 в .content
-    h1 есть в блоках, но его не выделяет.
-*/
+/* Селектор дочерних элементов */
 .content > h1 {
     text-align: center;
     font-family: Arial, serif;
@@ -164,7 +160,7 @@ footer {
     text-align: center;
 }
 
-button {
+input[type="button"] {
     background-color: var(--edges-background-color);
     border: none;
     border-radius: 5%;
@@ -173,7 +169,7 @@ button {
     color: var(--main-font-color);
 }
 
-.selected_button {
+input[type="button"].selected_button {
     background-color: var(--special-button-color);
 }
 
@@ -208,6 +204,16 @@ th {
 }
 
 td {
-    color: var(--edges-background-color);
-    word-break: break-word;
+    color: var(--main-font-color);
+    background-color: var(--edges-background-color);
+    word-break: keep-all;
+    text-align: center;
+}
+
+span.successful {
+    color: lawngreen;
+}
+
+span.missed {
+    color: red;
 }

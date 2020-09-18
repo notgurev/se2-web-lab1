@@ -5,7 +5,6 @@
     <title>Первая лаба</title>
     <link href="client/resources/lebedev.png" rel="icon" type="image/png">
     <link href="client/styles.css" rel="stylesheet" type="text/css"/>
-    <script src="client/main.js"></script>
 </head>
 <body>
 
@@ -21,7 +20,7 @@
         <div class="content_block" id="graph-picture"></div>
         <div class="content_block" id="inputs">
             <h1>Ввод параметров</h1>
-            <form action="server/server.php" class="input_form" method="post">
+            <form class="input_form" id="values_selection">
                 <div id="x_input_block">
                     <div class="checkbox_block">
                         <label>X: </label>
@@ -45,14 +44,14 @@
                 <div id="r_input_block">
                     <div class="button_block">
                         <label>R: </label>
-                        <button name="r" onclick="changeR(this)" type="button" value="1">1</button>
-                        <button name="r" onclick="changeR(this)" type="button" value="1.5">1.5</button>
-                        <button name="r" onclick="changeR(this)" type="button" value="2">2</button>
-                        <button name="r" onclick="changeR(this)" type="button" value="2.5">2.5</button>
-                        <button name="r" onclick="changeR(this)" type="button" value="3">3</button>
+                        <input name="r" onclick="changeR(this)" type="button" value="1">
+                        <input name="r" onclick="changeR(this)" type="button" value="1.5">
+                        <input name="r" onclick="changeR(this)" type="button" value="2">
+                        <input name="r" onclick="changeR(this)" type="button" value="2.5">
+                        <input name="r" onclick="changeR(this)" type="button" value="3">
                     </div>
                 </div>
-                <button class="special_button" disabled id="submit_button" onclick="submit(this)" type="button">
+                <button class="special_button" disabled id="submit_button" type="submit">
                     Отправить
                 </button>
             </form>
@@ -82,4 +81,5 @@
 </footer>
 
 </body>
+<script src="client/main.js"></script>
 </html>
