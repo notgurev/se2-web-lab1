@@ -151,6 +151,10 @@ footer {
     box-shadow: none;
 }
 
+.special_black_button {
+    background-color: var(--edges-background-color);
+}
+
 .input_form {
     font-family: "Montserrat", "Open Sans", sans-serif;
     font-size: 15pt;
