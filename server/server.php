@@ -34,7 +34,7 @@ function check_area($x, $y, $r)
 function check_values($x, $y, $r)
 {
     return in_array($x, [-4, -3, -2, -1, 0, 1, 2, 3, 4])
-        and (is_numeric($y) and $y > -5 and $y < 3) // is numeric check necessary?
+        and (is_numeric($y) and $y > -5 and $y < 3)
         and in_array($r, [1, 1.5, 2, 2.5, 3]);
 }
 
